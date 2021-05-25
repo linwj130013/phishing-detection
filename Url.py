@@ -1,5 +1,15 @@
 class Url:
-    def __init__(self):
+    def __init__(self, url=""):
+        self.url = url
+        # separation of url
+        self.domain = ""
+        self.directory = ""
+        self.file = ""
+        self.params = ""
+
+        self.split_url()
+
+        # 101 attributes
         self.qty_dot_url = 0
         self.qty_hyphen_url = 0
         self.qty_underline_url = 0
@@ -111,3 +121,13 @@ class Url:
         self.url_google_index = 0
         self.domain_google_index = 0
         self.url_shortened = 0
+
+    def split_url(self):
+        self.domain = self.url.split('/')[2]
+        self.directory = self.url.split('/')[3]
+        self.file = self.url.split('/')[4].split('?')[0]
+        self.params = self.url.split('?')[-1]
+
+
+url = "https://domain.com/dir/index.php?q=example"
+Url(url)
