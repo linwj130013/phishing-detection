@@ -1,3 +1,5 @@
+import requests
+
 class Url:
     def __init__(self, url=""):
         self.url = url
@@ -120,7 +122,7 @@ class Url:
 
         # others
         self.email_in_url = 0
-        self.time_response = 0.0
+        self.time_response = self.get_resp_time(self.url)
         self.domain_spf = 0
         self.asn_ip = 0
         self.time_domain_activation = 0
@@ -153,7 +155,10 @@ class Url:
             return self.count[symbol]
         else:
             return 0
-
+    
+    def get_resp_time(self, url):
+        respTime = requests.get(url)
+        return respTime.elapsed.microseconds/1000/1000
 
 url = "https://domain.com/dir/index.php?q=example"
 Url(url)
