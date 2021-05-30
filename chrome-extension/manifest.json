@@ -1,14 +1,21 @@
 {
-    "name": "Phishing Website Detector",
-    "description": "Detetcts phishihng websites",
-    "version": "1.0",
-    "manifest_version": 3,
-    "content_scripts": [
-        {
-          "matches": [
-            "<all_urls>"
-          ],
-          "js": ["content.js"]
-        }
+  "name": "Phishing Website Detector",
+  "description": "Detetcts phishihng websites",
+  "version": "1.0",
+  "manifest_version": 2,
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
       ]
+    }
+  ]
 }

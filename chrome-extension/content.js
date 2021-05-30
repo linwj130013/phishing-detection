@@ -1,14 +1,17 @@
-url = window.location.origin
+url = window.location.href
 
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
     if (xhr.readyState == XMLHttpRequest.DONE) {
-        let res = JSON.parse(xhr.responseText).url_returned
-        
-        alert(res);
+        let res = JSON.parse(xhr.responseText).is_phishing_website
+        console.log(res);
+        if (res == 1) {
+            alert("This might be a phishing webiste!");
+        }
     }
 }
-xhr.open("POST", "http://127.0.0.1:5000/test", true);
+
+xhr.open("POST", "http://127.0.0.1:5000/phishing_detector", true);
 xhr.setRequestHeader('Content-Type', 'application/json');
 
 xhr.send(JSON.stringify({

@@ -63,70 +63,71 @@ class Url:
         self.qty_percent_domain = self.get_freq('%')
         self.domain_length = self.get_length(self.domain)
 
-        self.count_freq(self.directory)
-        self.qty_dot_directory = self.get_freq('.')
-        self.qty_hyphen_directory = self.get_freq('-')
-        self.qty_underline_directory = self.get_freq('_')
-        self.qty_slash_directory = self.get_freq('/')
-        self.qty_questionmark_directory = self.get_freq('?')
-        self.qty_equal_directory = self.get_freq('=')
-        self.qty_at_directory = self.get_freq('@')
-        self.qty_and_directory = self.get_freq('&')
-        self.qty_exclamation_directory = self.get_freq('!')
-        self.qty_space_directory = self.get_freq(' ')
-        self.qty_tilde_directory = self.get_freq('~')
-        self.qty_comma_directory = self.get_freq(',')
-        self.qty_plus_directory = self.get_freq('+')
-        self.qty_asterisk_directory = self.get_freq('*')
-        self.qty_hashtag_directory = self.get_freq('#')
-        self.qty_dollar_directory = self.get_freq('$')
-        self.qty_percent_directory = self.get_freq('%')
         self.directory_length = self.get_length(self.directory)
+        self.count_freq(self.directory)
+        self.qty_dot_directory = self.get_freq('.') if self.directory_length > 0 else -1
+        self.qty_hyphen_directory = self.get_freq('-') if self.directory_length > 0 else -1
+        self.qty_underline_directory = self.get_freq('_') if self.directory_length > 0 else -1
+        self.qty_slash_directory = self.get_freq('/') if self.directory_length > 0 else -1
+        self.qty_questionmark_directory = self.get_freq('?') if self.directory_length > 0 else -1
+        self.qty_equal_directory = self.get_freq('=') if self.directory_length > 0 else -1
+        self.qty_at_directory = self.get_freq('@') if self.directory_length > 0 else -1
+        self.qty_and_directory = self.get_freq('&') if self.directory_length > 0 else -1
+        self.qty_exclamation_directory = self.get_freq('!') if self.directory_length > 0 else -1
+        self.qty_space_directory = self.get_freq(' ') if self.directory_length > 0 else -1
+        self.qty_tilde_directory = self.get_freq('~') if self.directory_length > 0 else -1
+        self.qty_comma_directory = self.get_freq(',') if self.directory_length > 0 else -1
+        self.qty_plus_directory = self.get_freq('+') if self.directory_length > 0 else -1
+        self.qty_asterisk_directory = self.get_freq('*') if self.directory_length > 0 else -1
+        self.qty_hashtag_directory = self.get_freq('#') if self.directory_length > 0 else -1
+        self.qty_dollar_directory = self.get_freq('$') if self.directory_length > 0 else -1
+        self.qty_percent_directory = self.get_freq('%') if self.directory_length > 0 else -1
 
         self.count_freq(self.file)
-        self.qty_dot_file = self.get_freq('.')
-        self.qty_hyphen_file = self.get_freq('-')
-        self.qty_underline_file = self.get_freq('_')
-        self.qty_slash_file = self.get_freq('/')
-        self.qty_questionmark_file = self.get_freq('?')
-        self.qty_equal_file = self.get_freq('=')
-        self.qty_at_file = self.get_freq('@')
-        self.qty_and_file = self.get_freq('&')
-        self.qty_exclamation_file = self.get_freq('!')
-        self.qty_space_file = self.get_freq(' ')
-        self.qty_tilde_file = self.get_freq('~')
-        self.qty_comma_file = self.get_freq(',')
-        self.qty_plus_file = self.get_freq('+')
-        self.qty_asterisk_file = self.get_freq('*')
-        self.qty_hashtag_file = self.get_freq('#')
-        self.qty_dollar_file = self.get_freq('$')
-        self.qty_percent_file = self.get_freq('%')
         self.file_length = self.get_length(self.file)
+        self.qty_dot_file = self.get_freq('.') if self.file_length > 0 else -1
+        self.qty_hyphen_file = self.get_freq('-') if self.file_length > 0 else -1
+        self.qty_underline_file = self.get_freq('_') if self.file_length > 0 else -1
+        self.qty_slash_file = self.get_freq('/') if self.file_length > 0 else -1
+        self.qty_questionmark_file = self.get_freq('?') if self.file_length > 0 else -1
+        self.qty_equal_file = self.get_freq('=') if self.file_length > 0 else -1
+        self.qty_at_file = self.get_freq('@') if self.file_length > 0 else -1
+        self.qty_and_file = self.get_freq('&') if self.file_length > 0 else -1
+        self.qty_exclamation_file = self.get_freq('!') if self.file_length > 0 else -1
+        self.qty_space_file = self.get_freq(' ') if self.file_length > 0 else -1
+        self.qty_tilde_file = self.get_freq('~') if self.file_length > 0 else -1
+        self.qty_comma_file = self.get_freq(',') if self.file_length > 0 else -1
+        self.qty_plus_file = self.get_freq('+') if self.file_length > 0 else -1
+        self.qty_asterisk_file = self.get_freq('*') if self.file_length > 0 else -1
+        self.qty_hashtag_file = self.get_freq('#') if self.file_length > 0 else -1
+        self.qty_dollar_file = self.get_freq('$') if self.file_length > 0 else -1
+        self.qty_percent_file = self.get_freq('%') if self.file_length > 0 else -1
 
         self.count_freq(self.params)
-        self.qty_dot_params = self.get_freq('.')
-        self.qty_hyphen_params = self.get_freq('-')
-        self.qty_underline_params = self.get_freq('_')
-        self.qty_slash_params = self.get_freq('/')
-        self.qty_questionmark_params = self.get_freq('?')
-        self.qty_equal_params = self.get_freq('=')
-        self.qty_at_params = self.get_freq('@')
-        self.qty_and_params = self.get_freq('&')
-        self.qty_exclamation_params = self.get_freq('!')
-        self.qty_space_params = self.get_freq(' ')
-        self.qty_tilde_params = self.get_freq('~')
-        self.qty_comma_params = self.get_freq(',')
-        self.qty_plus_params = self.get_freq('+')
-        self.qty_asterisk_params = self.get_freq('*')
-        self.qty_hashtag_params = self.get_freq('#')
-        self.qty_dollar_params = self.get_freq('$')
-        self.qty_percent_params = self.get_freq('%')
         self.params_length = self.get_length(self.params)
         self.qty_params = self.get_number_of_params()
+        self.qty_dot_params = self.get_freq('.') if self.params_length > 0 else -1
+        self.qty_hyphen_params = self.get_freq('-') if self.params_length > 0 else -1
+        self.qty_underline_params = self.get_freq('_') if self.params_length > 0 else -1
+        self.qty_slash_params = self.get_freq('/') if self.params_length > 0 else -1
+        self.qty_questionmark_params = self.get_freq('?') if self.params_length > 0 else -1
+        self.qty_equal_params = self.get_freq('=') if self.params_length > 0 else -1
+        self.qty_at_params = self.get_freq('@') if self.params_length > 0 else -1
+        self.qty_and_params = self.get_freq('&') if self.params_length > 0 else -1
+        self.qty_exclamation_params = self.get_freq('!') if self.params_length > 0 else -1
+        self.qty_space_params = self.get_freq(' ') if self.params_length > 0 else -1
+        self.qty_tilde_params = self.get_freq('~') if self.params_length > 0 else -1
+        self.qty_comma_params = self.get_freq(',') if self.params_length > 0 else -1
+        self.qty_plus_params = self.get_freq('+') if self.params_length > 0 else -1
+        self.qty_asterisk_params = self.get_freq('*') if self.params_length > 0 else -1
+        self.qty_hashtag_params = self.get_freq('#') if self.params_length > 0 else -1
+        self.qty_dollar_params = self.get_freq('$') if self.params_length > 0 else -1
+        self.qty_percent_params = self.get_freq('%') if self.params_length > 0 else -1
+
 
         # others
         self.response_obj = requests.get(url, allow_redirects=True)
-        self.whois_response = whois.whois(self.url)
+        self.whois_response = self.get_whois_response()
 
         self.time_response = self.get_response_time()
         self.asn_ip = self.get_asn_ip()
@@ -142,9 +143,12 @@ class Url:
 
     def get_mx_servers(self):
         mx_count = 0
-        answers = dns.resolver.query(self.domain, 'MX')
-        for _ in answers:
-            mx_count += 1
+        try:
+            answers = dns.resolver.query(self.domain, 'MX')
+            for _ in answers:
+                mx_count += 1
+        except Exception:
+            pass
         return mx_count
 
     def get_asn_ip(self):
@@ -248,3 +252,9 @@ class Url:
         if len(self.params) == 0:
             return 0
         return len(self.params.split('&'))
+
+    def get_whois_response(self):
+        try:
+            whois.whois(self.url)
+        except Exception:
+            return {"expiration_date": None, "creation_date": None, "name_servers": None}
