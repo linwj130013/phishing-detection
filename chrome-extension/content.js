@@ -1,12 +1,12 @@
-url = window.location.href
+url = window.location.origin
 
-var xhr = new XMLHttpRequest();
+const xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
-    if (xhr.readyState == XMLHttpRequest.DONE) {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
         let res = JSON.parse(xhr.responseText).is_phishing_website
         console.log(res);
         if (res == 1) {
-            alert("This might be a phishing webiste!");
+            alert("This might be a phishing website!");
         }
     }
 }

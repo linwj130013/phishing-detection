@@ -10,6 +10,7 @@ import datetime
 import os.path
 
 
+# noinspection PyBroadException
 class Url:
     def __init__(self, url=""):
         self.url = url
@@ -124,8 +125,6 @@ class Url:
         self.qty_dollar_params = self.get_freq('$') if self.params_length > 0 else -1
         self.qty_percent_params = self.get_freq('%') if self.params_length > 0 else -1
 
-
-        # others
         self.response_obj = requests.get(url, allow_redirects=True)
         self.whois_response = self.get_whois_response()
 
@@ -134,7 +133,7 @@ class Url:
         self.time_domain_activation = self.get_activation_days()
         self.time_domain_expiration = self.get_expiration_days()
         self.qty_ip_resolved = self.get_ips_resolved()
-        self.qty_nameservers = len(self.whois_response['name_servers']) if self.whois_response['name_servers'] else -1
+        self.qty_nameservers = self.get_qty_nameservers()
         self.qty_mx_servers = self.get_mx_servers()
         self.tls_ssl_certificate = self.has_valid_certificate()
         self.qty_redirects = len(self.response_obj.history) - 1 if len(self.response_obj.history) > 0 else 0
@@ -157,7 +156,7 @@ class Url:
             ip = socket.gethostbyname(self.domain)
             return int(c.lookup(ip).asn)
         except Exception:
-            return  -1
+            return -1
 
     def get_ips_resolved(self):
         ip_tuple = socket.gethostbyname_ex(self.domain)
@@ -258,3 +257,10 @@ class Url:
             return whois.whois(self.url)
         except Exception:
             return {"expiration_date": None, "creation_date": None, "name_servers": None}
+
+    def get_qty_nameservers(self):
+        nameservers = self.whois_response['name_servers']
+        if isinstance(nameservers, list) and nameservers:
+            return len(nameservers)
+        else:
+            return -1
